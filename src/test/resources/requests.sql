@@ -21,13 +21,13 @@ WHERE number = "5559000000000002";
 
 DELETE FROM auth_codes WHERE created < NOW() - INTERVAL 5 MINUTE;
 
--- выборка всех столбцов и всех строк из таблицы users (будьте осторожны на больших таблицах)
+
 SELECT * FROM users;
--- выборка только определённых столбцов
+
 SELECT id, login FROM users;
--- выборка по условию
+
 SELECT balance_in_kopecks FROM cards WHERE number = "5559000000000002";
--- вычисляемые столбцы
+
 SELECT balance_in_kopecks / 100 AS balance_in_rub FROM cards WHERE number = "5559000000000002";
 
 SELECT max(cards.balance_in_kopecks) FROM cards;
